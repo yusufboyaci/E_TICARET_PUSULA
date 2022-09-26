@@ -15,5 +15,9 @@ namespace DATAACCESS.Repositories.Concrete
         {
             _context = context;
         }
+        public bool CheckCredential(string userName, string password)
+        {
+            return Any(x => x.UserName == userName && x.Password == password);
+        }
     }
 }

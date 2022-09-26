@@ -1,4 +1,5 @@
-﻿using DATAACCESS.Context;
+﻿using API.ViewModels;
+using DATAACCESS.Context;
 using DATAACCESS.Repositories.Concrete;
 using ENTITIES;
 using Microsoft.AspNetCore.Http;
@@ -76,6 +77,20 @@ namespace API.Controllers
             {
                 _userRepository.Remove(user);
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+        [HttpPost("Login")]
+        public IActionResult Login(LoginVM login)
+        {
+            try
+            {
+            bool result = _userRepository.CheckCredential(login.UserName, login.Password);
+            return Ok(result);
+
             }
             catch (Exception ex)
             {

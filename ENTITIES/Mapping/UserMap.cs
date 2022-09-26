@@ -16,7 +16,8 @@ namespace ENTITIES.Mapping
             builder.ToTable("users");
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired(false);
             builder.Property(x => x.Surname).HasMaxLength(100).IsRequired(false);
-            builder.Property(x => x.UserName).HasMaxLength(100).IsRequired(false);
+            builder.Property(x => x.UserName).HasMaxLength(100).IsRequired(true);
+            builder.Property(x => x.Password).HasMaxLength(500).IsRequired(true);
             builder.Property(x => x.MailAddress).HasMaxLength(500).IsRequired(false);
             base.Configure(builder);
         }
