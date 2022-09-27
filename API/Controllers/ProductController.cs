@@ -47,7 +47,7 @@ namespace API.Controllers
             {
                 _productRepository.Add(product);
                 _productRepository.Activate(product.Id);
-                return Ok();
+                return NoContent();
 
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace API.Controllers
             {
                 _productRepository.Update(product);
                 _productRepository.Activate(product.Id);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace API.Controllers
             try
             {
                 _productRepository.Remove(product);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {

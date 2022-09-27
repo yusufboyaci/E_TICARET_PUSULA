@@ -47,7 +47,7 @@ namespace API.Controllers
             {
                 _basketRepository.Add(basket);
                 _basketRepository.Activate(basket.Id);
-                return Ok();
+                return NoContent();
 
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace API.Controllers
             {
                 _basketRepository.Update(basket);
                 _basketRepository.Activate(basket.Id);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace API.Controllers
             try
             {
                 _basketRepository.Remove(basket);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {
