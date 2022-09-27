@@ -4,7 +4,7 @@ namespace UI.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Add()
         {
             return View();
         }

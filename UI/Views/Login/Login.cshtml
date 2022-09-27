@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -10,9 +9,6 @@
     <meta name="viewport" content="width=device-width" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="~/css/login.css" rel="stylesheet" />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <title>Login</title>
 </head>
 <body>
@@ -36,7 +32,8 @@
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register here</a>
+                                <a href="#" class="text-info" data-toggle="modal" data-target="#ekleModal">Kayıt</a>
+
                             </div>
                         </form>
                     </div>
@@ -45,6 +42,62 @@
         </div>
     </div>
 
-    
+
+
+    <!-- Modal Ekleme İçin-->
+    <div class="modal fade" id="ekleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Kayıt İşlemi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmLoginEkle">
+                        <div class="form-group">
+                            <label>Adınız</label>
+                            <input type="text" class="form-control" id="Name" name="name" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Soyadınız</label>
+                            <input type="text" class="form-control" id="Surname" name="surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" class="form-control" id="Username" name="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Şifre</label>
+                            <input type="password" class="form-control" id="Password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mail</label>
+                            <input type="email" class="form-control" id="MailAddress" name="mailAddress" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Doğum Tarihi</label>
+                            <input type="datetime-local" class="form-control" id="Birthdate" name="birthdate" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button id="btnLoginEkle" type="button" class="btn btn-primary">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="~/js/jqueryserailizejson.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.1/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.1/dist/locale/bootstrap-table-tr-TR.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/login.js"></script>
 </body>
 </html>

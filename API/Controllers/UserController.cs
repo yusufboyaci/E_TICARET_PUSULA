@@ -9,7 +9,7 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         UserRepository _userRepository;
         public UserController(AppDbContext context)
@@ -48,7 +48,7 @@ namespace API.Controllers
             {
                 _userRepository.Add(user);
                 _userRepository.Activate(user.Id);
-                return Ok();
+                return NoContent();
 
             }
             catch (Exception ex)
@@ -63,7 +63,7 @@ namespace API.Controllers
             {
                 _userRepository.Update(user);
                 _userRepository.Activate(user.Id);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace API.Controllers
             try
             {
                 _userRepository.Remove(user);
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {

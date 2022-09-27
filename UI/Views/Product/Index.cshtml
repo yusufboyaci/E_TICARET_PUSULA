@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+
+<h1>Ürün Listesi</h1>
+<table id="UrunListesi"
+       data-toggle="ArabaListesi"
+       data-click-to-select="true"
+       data-show-colums="true"
+       data-checkbox-header="false"
+       data-multiple-select-row="true"
+       data-toolbar="#toolbar"
+       data-pagination="true"
+       data-search="true">
+    <thead>
+        <tr>
+            <th id="chk" data-field="state" data-checkbox="true"></th>
+            <th data-field="name">Ürünler</th>
+            <th data-field="price">Fiyat</th>
+            <th data-field="stock">Miktar</th>
+            <th data-field="quantityPerUnit">Birim</th>
+            <th data-field="imagePath" data-formatter="dosyaFormatter">Resim</th>
+        </tr>
+    </thead>
+    <tbody><tr></tr></tbody>
+</table>
+<!-- Button modal -->
+<button id="btnEkleModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ekleModal">
+    Kayıt
+</button>
+<button id="btnGuncelleModal" type="button" class="btn btn-info" data-toggle="modal" data-target="#guncelleModal">
+    Guncelle
+</button>
+<button id="btnSil" class="btn btn-danger">Sil</button>
+<!-- Modal Ekleme İçin-->
+<div class="modal fade" id="ekleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kayıt İşlemi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmEkle">
+                    <div class="form-group">
+                        <label>Araba</label>
+                        <input type="text" class="form-control" id="AddProduct" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Ücret</label>
+                        <input type="number" class="form-control" id="AddPrice" name="price" />
+                    </div>
+                    <div class="form-group">
+                        <label>Stok</label>
+                        <input type="number" class="form-control" id="AddStock" name="stock" />
+                    </div>
+                    <div class="form-group">
+                        <label>Birim</label>
+                        <input type="text" class="form-control" id="AddQuantityPerUnit" name="quantityPerUnit" />
+                    </div>
+                    <div class="form-group">
+                        <label>Resim</label>
+                        <input type="file" class="form-control-file" id="AddImage" name="image" />
+                        <input type="hidden" name="imagePath" id="ImagePath" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button id="btnEkle" type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Güncelleme İçin -->
+<div class="modal fade" id="guncelleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Güncelleme İşlemi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmGuncelle" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Araba</label>
+                        <input type="text" class="form-control" id="ArabaAdGuncelle" name="ad" />
+                    </div>
+                    <div class="form-group">
+                        <label>Ücret</label>
+                        <input type="number" class="form-control" id="ArabaUcretGuncelle" name="ucret" />
+                    </div>
+                    <div class="form-group">
+                        <label>Stok</label>
+                        <input type="number" class="form-control" id="ArabaStokGuncelle" name="stok" />
+                    </div>
+                    <div class="form-group">
+                        <label>Birim</label>
+                        <input type="text" class="form-control" id="ArabaBirimGuncelle" name="birim" />
+                    </div>
+                    <div class="form-group">
+                        <label>Resim</label>
+                        <input type="file" class="form-control-file" id="ArabaResimGuncelle" name="resim" accept=".jpg,.png,.gif,.jpeg" />
+                    </div>
+                    <div class="form-group">
+                        <label>Galeri</label>
+                        <select type="text" class="form-control" id="ArabaGaleriGuncelle" name="galeriAd">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Galeri Adresi</label>
+                        <select type="text" class="form-control" id="ArabaGaleriAdresEkle" name="galeriAdres">
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button id="btnGuncelle" type="button" class="btn btn-primary">Guncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
