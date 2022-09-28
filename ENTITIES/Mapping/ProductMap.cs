@@ -15,7 +15,6 @@ namespace ENTITIES.Mapping
         {
             builder.ToTable("products");
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired(false);
-            builder.HasOne(x => x.User).WithMany(x => x.Products).HasForeignKey(x => x.UserId);
             base.Configure(builder);    
         }
     }

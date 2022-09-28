@@ -18,6 +18,6 @@ namespace ENTITIES
         public string? UserImagePath { get; set; }
         public Role? Role { get; set; }
         public DateTime? Birthdate { get; set; }
-        public virtual List<Product>? Products { get; set; }
+        public virtual List<Basket>? Baskets { get; set; }
     }
 }

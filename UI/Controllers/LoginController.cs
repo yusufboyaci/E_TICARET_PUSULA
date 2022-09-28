@@ -34,7 +34,7 @@ namespace UI.Controllers
                     ClaimsIdentity userIdentity = new ClaimsIdentity(claims, "login");
                     ClaimsPrincipal userPrincipal = new ClaimsPrincipal(userIdentity);
                     await HttpContext.SignInAsync(userPrincipal);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Product");
                 }
             }
             return View();

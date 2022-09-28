@@ -13,5 +13,7 @@ namespace ENTITIES
         public string? ProductName { get; set; }
         public decimal? Price { get; set; }
         public decimal? TotalPrice { get; set; }
+        public Guid UserId { get; set; }//FK
+        public virtual User? User { get; set; }
     }
 }

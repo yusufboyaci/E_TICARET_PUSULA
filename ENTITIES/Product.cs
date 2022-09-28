@@ -14,7 +14,5 @@ namespace ENTITIES
         public short? Stock { get; set; }
         public string? QuantityPerUnit { get; set; }
         public string? ImagePath { get; set; }
-        public Guid UserId { get; set; }//FK
-        public virtual User? User { get; set; }
     }
 }
