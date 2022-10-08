@@ -26,7 +26,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("Get")]
@@ -38,7 +38,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
         [HttpPost("Add")]
@@ -53,7 +53,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
         [HttpPut("Update")]
@@ -67,7 +67,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
         [HttpDelete("Delete")]
@@ -80,7 +80,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
         [HttpPost("Login")]
@@ -94,7 +94,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
     }
